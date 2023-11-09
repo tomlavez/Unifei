@@ -42,7 +42,7 @@ class LimiteInsereDisciplinas(tk.Toplevel):
         self.labelNome = tk.Label(self.frameNome, text="Nome: ")
         self.inputNome = tk.Entry(self.frameNome, width=20)
         self.labelNome.pack(side="left")
-        self.inputCodigo.pack(side="left")
+        self.inputNome.pack(side="left")
 
         #Criando container button
         self.buttonSubmit = tk.Button(self.frameButton, text="Enter")
@@ -73,7 +73,7 @@ class CtrlDisciplina(): #Controle da Janela
         self.limiteIns = LimiteInsereDisciplinas(self)
 
     def mostraDisciplinas(self):
-        str = "Código Disciplina --- Nome\n"
+        str = "Código --- Nome\n"
         for disc in self.listaDisciplinas:
             str += disc.codigo + " --- " + disc.nome + "\n"
         self.limiteLista = LimiteMostraDisciplinas(str)
